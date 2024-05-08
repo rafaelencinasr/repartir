@@ -1,4 +1,5 @@
 import './login.css';
+import '../../style.css';
 import supabase from '../../config/supabaseClient';
 const usernameInput = document.querySelector('#usuario');
 const passwordInput = document.querySelector('#contrasena');
