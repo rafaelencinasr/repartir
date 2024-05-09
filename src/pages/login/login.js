@@ -7,10 +7,28 @@ const passwordInput = document.querySelector('#contrasena');
 const loginBtn = document.querySelector("#login-btn");
 loginBtn.addEventListener('click',(e)=>{
     e.preventDefault();
-    console.log(usernameInput.value);
-    console.log(passwordInput.value);
-    getData();
+    signInWithEmail();
 })
+
+async function signInWithEmail() {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: usernameInput.value,
+      password: passwordInput.value,
+    })
+    if(data){
+        alert('Iniciaste sesion!');
+    }
+    console.log(data);
+  }
+
+  async function signOut() {
+    const { error } = await supabase.auth.signOut();
+    if(!error){
+      alert("Sesion cerrada!");
+    }
+  }
+  
+  
 
 async function getData(){
     const {data, error} = await supabase
@@ -27,3 +45,9 @@ async function getData(){
             console.log(data);
         }
 }
+
+const logoutBtn = document.querySelector("#logoutBtn");
+logoutBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    signOut();
+})
