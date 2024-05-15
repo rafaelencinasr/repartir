@@ -1,0 +1,104 @@
+.informationTitle{
+    font-weight: 900;
+}
+
+#searchbar{
+    display: block;
+    width: 280px;
+    height: 35px;
+    margin: 5px auto;
+    text-align: center;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 14px;
+    border-radius: 50px;
+}
+
+#searchbarContainer{
+    position: relative;
+}
+
+#searchIcon{
+    position: absolute;
+    left: 45px;
+    top: 6px;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+#filtros{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.storeData{
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.buttonsContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+    & > button{
+        font-size: 15px;
+    }
+}
+
+.registrarBtn{
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    font-size: 20px !important;
+}
+
+a{
+    color: var(--verde-batuq);
+    text-decoration: underline;
+    &:visited{
+        color: var(--verde-batuq);
+        text-decoration: underline;
+    }
+    &:hover{
+        color: red;
+        
+    }
+}
+
+.buttonLink{
+    font-size: 24px;
+    background-color: var(--verde-batuq);
+    border: none;
+    color: white;
+    padding: 10px 38px;
+    border-radius: 12px;
+
+    &:hover{
+        background-color: var(--hover-verde);
+        cursor: pointer;
+    }
+
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+}
+
+.googlemapsBtn, .agregarrutaBtn{
+    padding: 5px 20px;
+
+}
+
+.storeInformation{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px 10px;
+}
+
+.direccion{
+    grid-column: 1 / 3;
+}
