@@ -17,7 +17,7 @@ async function signInWithEmail() {
     })
     if(data){
         alert('Iniciaste sesion!');
-        window.location.href = "http://www.repartir.bacanorabatuq.com/tiendas.html";
+        window.location.href = "http://repartir.bacanorabatuq.com/tiendas.html";
     }
     console.log(data);
   }
