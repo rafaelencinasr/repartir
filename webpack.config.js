@@ -4,7 +4,7 @@ module.exports = {
   entry: {
     index: './src/index.js',
     login: './src/pages/login/login.js',
-    //entregar: './src/pages/entregar.js',
+    entregar: './src/pages/entregar/entregar.js',
     tiendas: './src/pages/tiendas/tiendas.js',
     //ruta: './src/pages/ruta.js',
     //entregas: './src/pages/entregas.js'
