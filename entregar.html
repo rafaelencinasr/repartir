@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiendas</title>
+    <link rel="stylesheet" href="../src/style.css">
+    <link rel="stylesheet" href="../src/pages/entregar/entregar.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    
+</head>
+<body>
+    <img id="bg-agave" src="./bg-agave.svg" alt="">
+
+    <div id="content">
+        <div class="pageTitle">Entregar</div>
+
+        <div id="proveedor">
+            Número de proveedor
+            <div>214185</div>
+        </div>
+    
+        <div class="styledCard">
+            <div class="topContainer">
+                <div class="sectionTitle">Información de tienda</div>
+                <div class="inputContainer tienda">
+                    <label class="inputTitle" for="nombre">Tienda</label>
+                    <!-- <input class="inputData" type="text" name="tienda" id="tienda"> -->
+                    <select name="nombre" id="nombre">
+                        <option selected value="">Error: Por favor inicia sesión</option>
+                    </select>
+                </div>
+                <div class="inputContainer direccion">
+                    <div class="inputTitle">Dirección</div>
+                    <div class="inputData" id="direccion"></div>
+                </div>
+            </div>
+            <div class="bottomContainer">
+                <div class="sectionTitle">Información de entrega</div>
+                <div class="inputContainer" id="750container">
+                    <label class="inputTitle" for="blanco750">750 ml:</label>
+                    <input class="inputData" type="number" name="blanco750" id="blanco750">
+                </div>
+                <div class="inputContainer">
+                    <label class="inputTitle" for="blanco200">200 ml:</label>
+                    <input class="inputData" type="number" name="blanco200" id="blanco200">
+                </div>
+                <div class="inputContainer">
+                    <label class="inputTitle" for="remision">Remisión</label>
+                    <input class="inputData" type="text" name="remision" id="remision">
+                </div>
+                <div class="inputContainer">
+                    <label class="inputTitle" for="factura">Factura</label>
+                    <input class="inputData" type="text" name="factura" id="factura">
+                </div>
+                <div class="inputContainer pago">
+                    <label class="inputTitle" for="pago">Pago</label>
+                    <input class="inputData" type="text" name="pago" id="pago">
+                </div>
+            </div>
+        </div>
+
+        <button id="guardarBtn">Guardar</button>
+    </div>
+
+
+
+    <script src="./entregar.js"></script>
+</body>
+</html>
