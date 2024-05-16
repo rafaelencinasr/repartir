@@ -1,4 +1,5 @@
 import './entregar.css';
+import '../../style.css';
 import dropdownOption from '../../components/dropdownOption';
 import registrarDatos from './registrarDatos';
 import supabase from '../../config/supabaseClient';
