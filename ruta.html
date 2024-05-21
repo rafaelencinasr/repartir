@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruta</title>
+    <link rel="stylesheet" href="../src/style.css">
+    <!-- <link rel="stylesheet" href="../src/pages/login/login.css"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    
+</head>
+<body>
+    <img id="bg-agave" src="./bg-agave.svg" alt="">
+    <div id="content">
+            <div class="pageTitle">Ruta</div>
+            <div id="inputSelector">
+                <select name="ruta" id="ruta">
+                    <option selected value="1">Ruta 1</option>
+                    <option value="2">Ruta 2</option>
+                    <option value="3">Ruta 3</option>
+                </select>
+            </div>
+            <div class="styledCard">
+                <div class="dragContainer">
+                    <span class="material-symbols-outlined">
+                        drag_handle
+                    </span>
+                </div>
+                <div class="deleteContainer">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </div>
+                <div class="sectionTitle">"${tienda.cr_tienda} - ${tienda.nombre}"</div>
+                <div class="storeInformation">
+                    <div class="informationTitle direccion">Dirección:
+                        <div class="direccionInfo storeData">${tienda.direccion}</div>
+                    </div>            
+                </div>
+                <div class="buttonsContainer">
+                    <button class="registrarBtn" onclick="location.href='./entregar.html?cr_tienda=${tienda.cr_tienda}&fromRuta=true';" type="button">Entrega aquí</button>
+                    <button class="googlemapsBtn" onclick="location.href='${tienda.urlmaps}';" type="button" >Google maps</button>
+                </div>
+            </div>
+            
+    </div>
+
+    <nav id="navbar">
+        <a href="./entregar.html">Entregar</a>
+        <a href="./tiendas.html">Tiendas</a>
+        <a href="./ruta.html">Ruta</a>
+        <a href="./login.html">Login</a>
+    </nav>
+    <script src="./ruta.js"></script>
+</body>
+</html>
