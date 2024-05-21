@@ -1,0 +1,51 @@
+#inputSelector{
+    width: 50%;
+    & > select:focus{
+        border: none;
+    }
+}
+
+.buttonsContainer{
+    width: 100%;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 1fr 1fr;
+    & > button{
+        padding: 10px 5px;
+        width: 100%;
+        font-size: 15px;
+    }
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.styledCard{
+    position: relative;
+    width: 280px;
+    margin: 0 auto;
+}
+
+.dragContainer{
+    position: absolute;
+    top: 0;
+    left: -35px;
+    cursor: grab;
+}
+
+.deleteContainer{
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.informationTitle{
+    font-weight: 900;
+    & > div{
+        font-weight: 400;
+    }
+}

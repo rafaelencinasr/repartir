@@ -13,6 +13,9 @@ const guardarBtn = document.querySelector("#guardarBtn");
 let params = new URL(document.location).searchParams; //Se revisa el URL para obtener el cr_tienda 
 let param_cr_tienda = params.get("cr_tienda"); // Se extrae especificamente el valor de cr_tienda=
 console.log("cr_tienda= " + param_cr_tienda);
+let param_fromRuta = params.get("fromRuta");
+param_fromRuta = (param_fromRuta === 'true');
+console.log(param_fromRuta);
 
 async function getCRNombre(){
     const {data, error} = await supabase
@@ -24,7 +27,7 @@ async function getCRNombre(){
             alert("Error :(")
         }
 
-        if(data){
+        if(data.length>0){
             selectNombre.innerHTML='';
             console.log(data);
             data.forEach((tienda)=>{
@@ -64,5 +67,5 @@ async function getDireccion(cr_tienda){
 }
 
 guardarBtn.addEventListener("click", ()=>{
-    registrarDatos();
+    registrarDatos(param_fromRuta);
 })

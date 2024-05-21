@@ -6,7 +6,7 @@ module.exports = {
     login: './src/pages/login/login.js',
     entregar: './src/pages/entregar/entregar.js',
     tiendas: './src/pages/tiendas/tiendas.js',
-    //ruta: './src/pages/ruta.js',
+    ruta: './src/pages/ruta/ruta.js',
     //entregas: './src/pages/entregas.js'
   },
   output: {

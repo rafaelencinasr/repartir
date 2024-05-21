@@ -2,7 +2,8 @@ import supabase from '../../config/supabaseClient';
 
 
 
-async function registrarDatos(){
+async function registrarDatos(fromRuta){
+    alert("Intentando enviar datos");
     const remision = document.querySelector("#remision").value;
     const cr_tienda = document.querySelector("#nombre").value;
     const blanco750 = document.querySelector("#blanco750").value;
@@ -22,6 +23,9 @@ async function registrarDatos(){
         if(data){
             console.log(data);
             alert("Registro enviado correctamente!");
+            if(fromRuta){
+                document.location.href='./ruta.html?fromEntregar=true';
+            }
         }
 }
 

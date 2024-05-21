@@ -23,7 +23,7 @@ function tiendaCard(tienda){
 
     </div>
     <div class="buttonsContainer">
-        <button class="registrarBtn" onclick="location.href='https://repartir.bacanorabatuq.com/entregar.html?cr_tienda=${tienda.cr_tienda}';" type="button">Registrar entrega aquí</button>
+        <button class="registrarBtn" onclick="location.href='./entregar.html?cr_tienda=${tienda.cr_tienda}';" type="button">Registrar entrega aquí</button>
         <button class="googlemapsBtn" onclick="location.href='${tienda.urlmaps}';" type="button" >Google maps</button>
         <button class="agregarrutaBtn">Agregar a ruta</button>
     </div>
