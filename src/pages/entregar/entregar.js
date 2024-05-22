@@ -16,6 +16,7 @@ console.log("cr_tienda= " + param_cr_tienda);
 let param_fromRuta = params.get("fromRuta");
 param_fromRuta = (param_fromRuta === 'true');
 console.log(param_fromRuta);
+let param_ruta = params.get("ruta");
 
 async function getCRNombre(){
     const {data, error} = await supabase
@@ -67,5 +68,5 @@ async function getDireccion(cr_tienda){
 }
 
 guardarBtn.addEventListener("click", ()=>{
-    registrarDatos(param_fromRuta);
+    registrarDatos(param_fromRuta, param_ruta);
 })

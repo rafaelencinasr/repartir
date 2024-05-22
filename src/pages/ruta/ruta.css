@@ -1,4 +1,5 @@
 #inputSelector{
+    position: relative;
     width: 50%;
     & > select:focus{
         border: none;
@@ -18,6 +19,7 @@
 }
 
 #content{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,4 +50,24 @@
     & > div{
         font-weight: 400;
     }
+}
+
+#refresh{
+    /* Button style reset */
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    transition: 50ms;
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+    position: absolute;
+    top: 4px;
+    left: -32px;
+}
+
+#ruta{
+    text-align: center;
 }

@@ -20,7 +20,7 @@ function rutaCard(tienda){
         </div>            
     </div>
     <div class="buttonsContainer">
-        <button class="registrarBtn" onclick="location.href='./entregar.html?cr_tienda=${tienda.cr_tienda}&fromRuta=true';" type="button">Entrega aquí</button>
+        <button class="registrarBtn" onclick="location.href='./entregar.html?cr_tienda=${tienda.cr_tienda}&fromRuta=true&ruta=${tienda.ruta}';" type="button">Entrega aquí</button>
         <button class="googlemapsBtn" onclick="location.href='${tienda.urlmaps}';" type="button" >Google maps</button>
     </div>
     `;

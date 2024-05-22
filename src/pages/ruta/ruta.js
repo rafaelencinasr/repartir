@@ -8,9 +8,11 @@ const rutaSelector = document.querySelector("#ruta");
 
 
 let params = new URL(document.location).searchParams; //Se revisa el URL para obtener el cr_tienda 
-let param_fromEntregar = params.get("fromEntregar");
-param_fromEntregar = (param_fromEntregar === 'true');
-console.log(param_fromEntregar);
+let param_ruta = params.get("ruta");
+
+if(param_ruta){
+    rutaSelector.value = Number(param_ruta);
+}
  
 async function getRuta(ruta){
     const {data, error} = await supabase
@@ -25,61 +27,59 @@ async function getRuta(ruta){
 
         if(data){
             localStorage.setItem(`ruta${rutaSelector.value}`, JSON.stringify(data));
-            renderStyledCards(data);
+            renderStyledCards();
         }
 }
 
-function renderStyledCards(data){
-    console.log(data);
+function renderStyledCards(){
+    // Remove data parameter, read directly from localStorage. }
+    // If localStorage is empty, get data from Database
+    //console.log(data);
+
+    //Cleans DOM from previews cards
     let styledCardsList = document.querySelectorAll('.styledCard');
     styledCardsList.forEach(card=>{
         card.remove();
     })
+
+    let data = JSON.parse(localStorage.getItem(`ruta${rutaSelector.value}`));
     data.forEach((tienda)=>{
         content.append(rutaCard(tienda));
     })
     applyDeleteFunction(rutaSelector.value);
 }
-
-function changeRuta(fromEntregar){
-    if(fromEntregar){
-        console.log('Getting data from local storage');
-        renderStyledCards(JSON.parse(localStorage.getItem(`ruta${rutaSelector.value}`)));
-    }
-    else{
-        console.log('Getting data from Supabase');
-        getRuta(rutaSelector.value);
-    }
-};
-
-changeRuta(param_fromEntregar);
+renderStyledCards();
 
 rutaSelector.addEventListener('change', ()=>{
-    changeRuta();
+    if(param_ruta){
+        document.location.href='./ruta.html';
+    }
+    renderStyledCards();
 });
 
+const refreshBtn = document.querySelector("#refresh");
+refreshBtn.addEventListener("click", ()=>{
+    console.log("Refresh btn clicked for ruta " + rutaSelector.value);
+    getRuta(rutaSelector.value);
+})
+
 function applyDeleteFunction(ruta){
+    console.log("applyDeleteFunction called");
 
     let deleteIconsList = document.querySelectorAll('.deleteContainer');
     deleteIconsList.forEach((deleteIcon, index)=>{
         deleteIcon.addEventListener('click',()=>{
-
             let result = confirm("¿Borrar elemento de ruta?");
             if (result) {
                 let tempArray = [...JSON.parse(localStorage.getItem(`ruta${rutaSelector.value}`))];
-                console.log('tempArray:');
-                console.log(tempArray);
                 tempArray.splice(index, 1);
                 localStorage.setItem(`ruta${rutaSelector.value}`, JSON.stringify(tempArray));
-                console.log('tempArray after delete:');
-                console.log(tempArray);
-                changeRuta(true);
+                renderStyledCards();
             }
         }
     )
     })
 }
 
-applyDeleteFunction(rutaSelector.value);
 
 
