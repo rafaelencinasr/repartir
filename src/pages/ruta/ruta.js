@@ -2,6 +2,7 @@ import './ruta.css';
 import '../../style.css';
 import rutaCard from '../../components/rutaCard.js'
 import supabase from '../../config/supabaseClient';
+import navbarInsert from '../../components/navbar.js';
 
 const content = document.querySelector("#content");
 const rutaSelector = document.querySelector("#ruta");
@@ -81,5 +82,5 @@ function applyDeleteFunction(ruta){
     })
 }
 
-
+navbarInsert();
 

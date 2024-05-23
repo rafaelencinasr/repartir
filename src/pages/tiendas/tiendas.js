@@ -2,6 +2,7 @@ import './tiendas.css';
 import '../../style.css';
 import supabase from '../../config/supabaseClient';
 import tiendaCard from '../../components/tiendaCard';
+import navbarInsert from '../../components/navbar.js';
 
 //https://stackoverflow.com/questions/28085468/postgresql-extract-last-row-for-each-id
 //para obtener la entrega mas reciente en una tienda
@@ -36,12 +37,4 @@ async function getData(){
 }
 getData();
 
-/* 
-const agregarrutaBtn = document.querySelector('.agregarrutaBtn');
-agregarrutaBtn.addEventListener('click',()=>{
-    console.log('Button clicked!');
-    getData();
-})
- */
-
-
+navbarInsert();

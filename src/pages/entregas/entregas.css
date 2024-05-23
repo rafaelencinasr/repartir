@@ -1,0 +1,30 @@
+.informationTitle{
+    font-weight: 900;
+    &>div{
+        font-weight: 400;
+    }
+}
+
+.entregaContainer{
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px 10px;
+}
+
+.styledCard:hover{
+    cursor: pointer;
+}
+
+.sectionTitle{
+    grid-column: 1 / 3;
+    align-items: center;
+    justify-self: start;
+}
+
+.editContainer{
+    position: absolute;
+    bottom: 0px;
+    right: -5px;
+}

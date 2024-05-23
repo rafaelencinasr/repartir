@@ -7,7 +7,7 @@ module.exports = {
     entregar: './src/pages/entregar/entregar.js',
     tiendas: './src/pages/tiendas/tiendas.js',
     ruta: './src/pages/ruta/ruta.js',
-    //entregas: './src/pages/entregas.js'
+    entregas: './src/pages/entregas/entregas.js'
   },
   output: {
     filename: '[name].js',

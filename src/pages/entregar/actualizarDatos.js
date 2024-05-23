@@ -2,8 +2,8 @@ import supabase from '../../config/supabaseClient';
 
 
 
-async function registrarDatos(fromRuta, ruta){
-    //alert("Intentando enviar datos");
+async function actualizarDatos(id){
+    alert("Intentando actualizar datos");
     const remision = document.querySelector("#remision").value;
     const cr_tienda = document.querySelector("#nombre").value;
     const blanco750 = document.querySelector("#blanco750").value;
@@ -13,7 +13,8 @@ async function registrarDatos(fromRuta, ruta){
 
     const {data, error} = await supabase
         .from('entregas')
-        .insert([{remision, factura, pago, cr_tienda, blanco750, blanco200}])
+        .update([{remision: remision, factura: factura, pago: pago, blanco750: blanco750, blanco200: blanco200}])
+        .eq('id',id)
         .select()
 
         if(error){
@@ -22,15 +23,9 @@ async function registrarDatos(fromRuta, ruta){
 
         if(data){
             console.log(data);
-            alert("Registro enviado correctamente!");
-            if(fromRuta){
-                document.location.href=`./ruta.html?ruta=${ruta}`;
-            }
+            alert("Registro actualizado correctamente!");
         }
 }
 
-export default registrarDatos;
-
-
-
+export default actualizarDatos;
 

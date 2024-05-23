@@ -1,6 +1,7 @@
 import './login.css';
 import '../../style.css';
 import supabase from '../../config/supabaseClient';
+import navbarInsert from '../../components/navbar.js';
 const usernameInput = document.querySelector('#usuario');
 const passwordInput = document.querySelector('#contrasena');
 
@@ -52,3 +53,5 @@ logoutBtn.addEventListener("click", (e)=>{
     e.preventDefault();
     signOut();
 })
+
+navbarInsert();
