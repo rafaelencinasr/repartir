@@ -26,7 +26,11 @@ async function registrarDatos(fromRuta, ruta){
             if(fromRuta){
                 document.location.href=`./ruta.html?ruta=${ruta}`;
             }
+            document.querySelector("#blanco750").value = 0;
+            document.querySelector("#blanco200").value = 0;
         }
+
+
 }
 
 export default registrarDatos;
