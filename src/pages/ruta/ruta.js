@@ -49,23 +49,36 @@ function renderStyledCards(){
     })
     applyDeleteFunction(rutaSelector.value);
 }
-renderStyledCards();
+//  Antes de renderear las cartas, revisar si existe la informacion en local storage:
+//  1. En caso de existir, renderizar las tarjets
+//  2. En caso de no existir, hacer llamado a database y luego renderizar tarjets
+
+function checkLocalStorageData(ruta){
+    if(localStorage.getItem(`ruta${ruta}`) === null){
+        getRuta(ruta);
+    } else{
+        renderStyledCards();
+    }
+}
+
+checkLocalStorageData(rutaSelector.value);
 
 rutaSelector.addEventListener('change', ()=>{
     if(param_ruta){
         document.location.href='./ruta.html';
     }
-    renderStyledCards();
+    checkLocalStorageData(rutaSelector.value);
 });
 
 const refreshBtn = document.querySelector("#refresh");
 refreshBtn.addEventListener("click", ()=>{
     console.log("Refresh btn clicked for ruta " + rutaSelector.value);
+    alert("Actualizando datos de ruta");
     getRuta(rutaSelector.value);
 })
 
 function applyDeleteFunction(ruta){
-    console.log("applyDeleteFunction called");
+    //console.log("applyDeleteFunction called");
 
     let deleteIconsList = document.querySelectorAll('.deleteContainer');
     deleteIconsList.forEach((deleteIcon, index)=>{

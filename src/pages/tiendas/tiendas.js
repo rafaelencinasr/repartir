@@ -21,8 +21,8 @@ async function getData(){
     const {data, error} = await supabase
         .from('tiendas')
         .select()
-        .eq('ruta',2)
-        .order('orden', {ascending: true});
+        .order('ruta', {ascending: true})
+        .order('orden', {ascending: true});;
 
         if(error){
             alert("Error :(")
