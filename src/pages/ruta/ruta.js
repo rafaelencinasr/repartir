@@ -64,9 +64,9 @@ function checkLocalStorageData(ruta){
 checkLocalStorageData(rutaSelector.value);
 
 rutaSelector.addEventListener('change', ()=>{
-    if(param_ruta){
+    /* if(param_ruta){
         document.location.href='./ruta.html';
-    }
+    } */
     checkLocalStorageData(rutaSelector.value);
 });
 

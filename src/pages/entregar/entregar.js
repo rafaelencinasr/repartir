@@ -91,6 +91,7 @@ guardarBtn.addEventListener("click", ()=>{
     }
     else{
         registrarDatos(param_fromRuta, param_ruta);
+        
     }
 })
 
@@ -106,4 +107,19 @@ if(param_editarEntrega){
             changeDireccionValue(); 
         }, 700);
     },1000)
+}
+
+if(param_fromRuta){
+    const content = document.querySelector('#content');
+    const returnBtn = document.createElement('button');
+    returnBtn.textContent = 'Regresar a ruta';
+    returnBtn.id = 'returnBtn';
+    returnBtn.addEventListener('click', ()=>{
+        let result = confirm("¿Regresar a ruta sin guardar entrega?");
+        if(result){
+            document.location.href=`./ruta.html?ruta=${param_ruta}`;
+        }
+    })
+
+    content.append(returnBtn);
 }
